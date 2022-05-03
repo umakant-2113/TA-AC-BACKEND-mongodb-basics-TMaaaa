@@ -12,6 +12,8 @@ Write code to
 <!-- use name of data base  -->
 
 
+
+
 - check list of databases to see newly created database.
 <!-- show dbs -->
 - check which database you are currently connected to ?
