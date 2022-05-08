@@ -7,7 +7,7 @@ Write code to execute below expressions.
 2. Create a collection called 'articles'.
 <!-- db.createCollections('articles') -->
 3. Insert multiple documents(at least 3) into articles. It should have fields
-<!-- db.articles.insert({title:'wings of fire',details:"umakant rajput",author:{
+<!-- db.articles.insertMany ({title:'wings of fire',details:"umakant rajput",author:{
   name:"umakant rajput",
   email:"lodhiumakant800@gmail.com",
   age:23
@@ -48,7 +48,7 @@ tegs:["Js","Mongo"]
 6. 1. Find documents using title
 <!-- db.articles.find(title:"matching the name of title") -->
 7. 2. Find documents using author's name field.
-<!-- db.articles.find(author:same name of author) -->
+<!-- db.articles.find(author.name:same name of author) -->
 8. Find document using a specific tag.
 <!-- db.articles.find(_id:objectId) -->
 
@@ -58,12 +58,12 @@ tegs:["Js","Mongo"]
 }}) -->
 10. Update a author's name using article's title.
 <!-- db.articles.update({title:give the name of title},{$set:{
-  author:change the name of author 
+  "author.name":"change the name of author" 
 }}) -->
 11. rename details field to description from all articles in articles collection.
 <!-- db.articles.rename(details:"enter the details name ") -->
 12. Add additional tag in a specific document.
-
+<!-- db.article.update({title:"same name of title"},{$push:{tags:"Mongo"}}) -->
 13. Update an article's title using $set and without $set.
 <!-- db.articles.update({$set{title:"change the title name "}}) -->
 
@@ -74,7 +74,7 @@ tegs:["Js","Mongo"]
 
 
 14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
-
+<!-- db.articles.remove(_id:sam id this ) -->
 // Sample data
 
 ```js
@@ -192,8 +192,10 @@ db.users.insertMany([
 Insert above data into database to perform below queries:-
 
 - Find all males who play cricket.
-<!-- db.users.find(gender:"male",sports:"cricket"); -->
-- Update user with extra golf field in sports array whose name is "Steve Ortega".
-
+<!-- db.users.find({gender:"male",sports:"cricket"}.pretty(); -->
+- Update user with extra golf field in sports array whose name is .
+<!-- db.users.update({name:""Steve Ortega""},{$push:{sports:"golf"}}) -->
 - Find all users who play either 'football' or 'cricket'.
+db.users.find({sports:$in:["football","cricket"]});
 - Find all users whose name includes 'ri' in their name.
+<!-- db.users.find({name:/ri/i}); -->
