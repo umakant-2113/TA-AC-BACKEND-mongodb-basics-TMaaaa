@@ -3,8 +3,17 @@ writeCode
 Write code to execute below expressions.
 
 1. Create a database named `blog`.
+<!-- use Blog -->
 2. Create a collection called 'articles'.
+<!-- db.createCollections('articles') -->
 3. Insert multiple documents(at least 3) into articles. It should have fields
+<!-- db.articles.insert({title:'wings of fire',details:"umakant rajput",author:{
+  name:"umakant rajput",
+  email:"lodhiumakant800@gmail.com",
+  age:23
+},
+tegs:["Js","Mongo"]
+}) -->
 
 - title as string
 - createdAt as date
@@ -33,21 +42,36 @@ Write code to execute below expressions.
 ```
 
 4. Find all the articles using `db.COLLECTION_NAME.find()`
+<!-- db.article.find() -->
 5. Find a document using \_id field.
+<!-- db.articles.find(_id:objectId) -->
 6. 1. Find documents using title
+<!-- db.articles.find(title:"matching the name of title") -->
 7. 2. Find documents using author's name field.
+<!-- db.articles.find(author:same name of author) -->
 8. Find document using a specific tag.
+<!-- db.articles.find(_id:objectId) -->
 
 9. Update title of a document using its \_id field.
+<!-- db.article.update({_id:gave the name of objectId},{$set:{
+  title:"Wings of Fire"
+}}) -->
 10. Update a author's name using article's title.
+<!-- db.articles.update({title:give the name of title},{$set:{
+  author:change the name of author 
+}}) -->
 11. rename details field to description from all articles in articles collection.
+<!-- db.articles.rename(details:"enter the details name ") -->
 12. Add additional tag in a specific document.
 
 13. Update an article's title using $set and without $set.
+<!-- db.articles.update({$set{title:"change the title name "}}) -->
 
 - Write the differences here ?
+<!-- we are using updateOne key to update the value of title  -->
 
 13. find an article using title and increment it's auhtor's age by 5.
+
 
 14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
 
@@ -168,6 +192,8 @@ db.users.insertMany([
 Insert above data into database to perform below queries:-
 
 - Find all males who play cricket.
+<!-- db.users.find(gender:"male",sports:"cricket"); -->
 - Update user with extra golf field in sports array whose name is "Steve Ortega".
+
 - Find all users who play either 'football' or 'cricket'.
 - Find all users whose name includes 'ri' in their name.
