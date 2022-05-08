@@ -65,4 +65,6 @@ mongoimport -d DB_NAME -c COLLECTION_NAME --type csv --file elections.csv(file l
 
 Generate mock csv data from `https://www.convertcsv.com/generate-test-data.htm`
 
+<!-- how to download this file then it will be change  -->
+
 - insert this mock csv data into `test` database into a collection named `students`
